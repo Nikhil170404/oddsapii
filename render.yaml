@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: xbet-scraper
+    env: docker
+    plan: free
+    branch: main
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: PORT
+        value: 10000
+    disk:
+      name: scraper-data
+      mountPath: /data
+      sizeGB: 1
